@@ -19,7 +19,7 @@ WindowFrame->Normal*)
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
- RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ RowBox[{"ClearAll", "[", "\"\<Globall`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.7173343376975594`*^9, 3.7173343387919903`*^9}, {
   3.717334392744404*^9, 3.717334515897017*^9}, {3.717334678265346*^9, 
   3.717334682797304*^9}, {3.717334723179838*^9, 3.717334747598097*^9}}],
