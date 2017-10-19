@@ -10,20 +10,192 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3057,        107]
-NotebookOptionsPosition[      2767,         92]
-NotebookOutlinePosition[      3123,        108]
-CellTagsIndexPosition[      3080,        105]
+NotebookDataLength[     11762,        382]
+NotebookOptionsPosition[     10889,        346]
+NotebookOutlinePosition[     11313,        363]
+CellTagsIndexPosition[     11270,        360]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["AOE Thin-Wall Project", "Title",
+ CellChangeTimes->{{3.717424822927401*^9, 3.71742482866551*^9}, {
+  3.71742648281264*^9, 3.717426484638542*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Group 7 - Marika Ottman, David Del Grosso, David Gardiner, Gaurav Sakhawala, \
+Ronak Shah, Vyon Coetzer\
+\>", "Subchapter",
+ CellChangeTimes->{{3.717426493808*^9, 3.717426576516625*^9}}],
+
 Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.7173343376975594`*^9, 3.7173343387919903`*^9}, {
    3.717334392744404*^9, 3.717334515897017*^9}, {3.717334678265346*^9, 
    3.717334682797304*^9}, {3.717334723179838*^9, 3.717334747598097*^9}, 
    3.717346315764962*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Constants", "Section",
+ CellChangeTimes->{{3.7174266658805304`*^9, 3.7174266721705217`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"gfactor", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "=", 
+    RowBox[{"32.174", "*", "gfactor"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"gravity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s2"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"croot", "=", "38.94"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"chord", " ", "at", " ", "root", " ", 
+    RowBox[{"(", "ft", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ctip", "=", "9.735"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"chord", " ", "at", " ", "tip", " ", 
+    RowBox[{"(", "ft", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Wto", "=", "550000"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"take", " ", "off", " ", "weight", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vcruise", "=", 
+    RowBox[{"490", "*", "1.68781"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"cruise", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Lw", "=", "117.84"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"wing", " ", "lenght", " ", 
+    RowBox[{"(", "ft", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Weng", "=", "10000"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"weight", " ", "engine", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"width", "=", 
+    RowBox[{".65", "*", "ct"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"box", " ", "breadth", " ", 
+    RowBox[{"(", "ft", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"height", "=", 
+    RowBox[{".1", "*", "ct"}]}], ";", 
+   RowBox[{"(*", 
+    RowBox[{"box", " ", "height", " ", 
+     RowBox[{"(", "ft", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"cl", "=", ".3925"}], ";", 
+   RowBox[{"(*", 
+    RowBox[{"lift", " ", 
+     RowBox[{"coef", ".", "at"}], " ", "3", " ", "AoA"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"cd", "=", ".0948"}], ";", 
+   RowBox[{"(*", 
+    RowBox[{"drag", " ", 
+     RowBox[{"coef", ".", "at"}], " ", "3", " ", "AoA"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Wlg", "=", "4320"}], ";", 
+   RowBox[{"(*", 
+    RowBox[{"weight", " ", "landing", " ", "gear", " ", 
+     RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Wfuel", "=", 
+    RowBox[{".3", "*", "223378"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"fuel", " ", "weight", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Llg", "=", "27.5"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"landing", " ", "gear", " ", "location", " ", 
+    RowBox[{"(", "ft", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"S", "=", "2062.4"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"wing", " ", "area", " ", 
+    RowBox[{"(", "ft2", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Rho]", "=", "0.002377"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"air", " ", "density", " ", 
+    RowBox[{"(", 
+     RowBox[{"slug", "/", "ft3"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Rho]35k", "=", 
+    RowBox[{"7.38", "*", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "4"}]]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"air", " ", "density", " ", 
+    RowBox[{"(", 
+     RowBox[{"slug", "/", "ft3"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"clmax", "=", "1.1263"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"max", " ", "lift", " ", "coefficient"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Vstall", "=", 
+   SqrtBox[
+    FractionBox["Wto", 
+     RowBox[{
+      FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";", " ", 
+  RowBox[{"(*", 
+   RowBox[{"stall", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Vto", "=", 
+   RowBox[{"1.2", " ", "Vstall"}]}], ";", " ", 
+  RowBox[{"(*", 
+   RowBox[{"takeoff", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"AR", "=", 
+   RowBox[{
+    SuperscriptBox["Lw", "2"], "/", "S"}]}], ";", " ", 
+  RowBox[{"(*", 
+   RowBox[{"aspect", " ", "ratio"}], "*)"}], 
+  "\[IndentingNewLine]"}]}], "Input",
+ CellChangeTimes->{{3.717426720785816*^9, 3.7174268321963263`*^9}, {
+  3.717427074010809*^9, 3.717427074116262*^9}, {3.717427162651938*^9, 
+  3.717427225640112*^9}, {3.7174273257317743`*^9, 3.717427397496539*^9}, {
+  3.717427435753292*^9, 3.717427477509349*^9}, {3.7174276801014767`*^9, 
+  3.717427733567273*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lift", "Section",
+ CellChangeTimes->{{3.7174266818244457`*^9, 3.717426682162325*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -35,23 +207,100 @@ Cell[BoxData[{
     RowBox[{"b", " ", "x"}], "+", "c"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"pz", "[", "x_", "]"}], "=", 
+   RowBox[{"dpy", "[", "x_", "]"}], "=", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"py", "[", "x", "]"}], ",", "x"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eq1", "=", 
    RowBox[{
-    RowBox[{"-", 
-     FractionBox[
-      RowBox[{
-       FractionBox["1", "2"], "\[Rho]", " ", 
-       SuperscriptBox["V", "2"], "S", " ", "Cd"}], "L"]}], "-", 
-    FractionBox[
-     SuperscriptBox[
-      RowBox[{"py", "[", "x", "]"}], "2"], 
-     FractionBox[
-      RowBox[{"(", 
+    RowBox[{"py", "[", "Lw", "]"}], "==", "0"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eq2", "=", 
+   RowBox[{
+    RowBox[{"dpy", "[", "0", "]"}], "\[Equal]", "0"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eq3", "=", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"py", "[", "x", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "Lw"}], "}"}]}], "]"}], "\[Equal]", 
+    RowBox[{"Wto", "/", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sol1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"eq1", ",", "eq2", ",", "eq3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"a", "/.", 
+    RowBox[{"sol1", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"b", "/.", 
+    RowBox[{"sol1", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"c", "/.", 
+    RowBox[{"sol1", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"py", "[", "x_", "]"}], "=", 
+  RowBox[{"py", "[", "x", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.71733475662055*^9, 3.7173348825804768`*^9}, {
+  3.717426609561859*^9, 3.7174266115267773`*^9}, {3.71742669074981*^9, 
+  3.7174266980432167`*^9}, {3.717426881282324*^9, 3.71742700738697*^9}, {
+  3.71742708992937*^9, 3.717427099324292*^9}, {3.7174272808279657`*^9, 
+  3.717427304262416*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3500.50916496945`", "\[VeryThinSpace]", "-", 
+  RowBox[{"2.6942841724017593`*^-15", " ", "x"}], "-", 
+  RowBox[{"0.25208427274856743`", " ", 
+   SuperscriptBox["x", "2"]}]}]], "Output",
+ CellChangeTimes->{{3.7174269883947678`*^9, 3.717427027317954*^9}, {
+  3.71742708317563*^9, 3.717427104996215*^9}, {3.717427290460047*^9, 
+  3.717427311525155*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Drag", "Section",
+ CellChangeTimes->{{3.717426693287449*^9, 3.717426694324852*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"pz", "[", "x_", "]"}], "=", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
        RowBox[{
         FractionBox["1", "2"], "\[Rho]", " ", 
-        SuperscriptBox["V", "2"], "S", " ", "\[Pi]", " ", 
-        RowBox[{"Exp", " ", "[", "1", "]"}], "AR"}], ")"}], "L"]]}]}], 
-  ";"}], "\[IndentingNewLine]", 
+        SuperscriptBox["Vto", "2"], "S", " ", "cd"}], "Lw"]}], "-", 
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"py", "[", "x", "]"}], "2"], 
+      FractionBox[
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox["1", "2"], "\[Rho]", " ", 
+         SuperscriptBox["Vto", "2"], "S", " ", "\[Pi]", " ", 
+         RowBox[{"Exp", " ", "[", "1", "]"}], "AR"}], ")"}], "Lw"]]}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"Vz", "[", "x_", "]"}], "=", 
@@ -87,14 +336,20 @@ Cell[BoxData[{
     RowBox[{"Integrate", "[", 
      RowBox[{
       RowBox[{"rot", "[", "x", "]"}], ",", "x"}], "]"}], "+", "c4"}]}], 
-  ";"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.71733475662055*^9, 3.7173348825804768`*^9}}]
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7174271195955057`*^9, 3.717427124422289*^9}, {
+  3.717427438182279*^9, 3.717427445511551*^9}, {3.717427480734857*^9, 
+  3.717427559210923*^9}, {3.717427650276516*^9, 3.717427677863999*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{808, 597},
-WindowMargins->{{Automatic, -182}, {Automatic, 0}},
+WindowSize->{629, 695},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
 2016)",
-StyleDefinitions->"Default.nb"
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"]
 ]
 (* End of Notebook Content *)
 
@@ -107,11 +362,29 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 318, 5, 28, "Input"],
-Cell[879, 27, 1884, 63, 209, "Input"]
+Cell[CellGroupData[{
+Cell[580, 22, 151, 2, 90, "Title"],
+Cell[CellGroupData[{
+Cell[756, 28, 196, 4, 129, "Subchapter"],
+Cell[955, 34, 318, 5, 37, "Input"],
+Cell[CellGroupData[{
+Cell[1298, 43, 98, 1, 66, "Section"],
+Cell[1399, 46, 4825, 143, 466, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6261, 194, 91, 1, 66, "Section"],
+Cell[CellGroupData[{
+Cell[6377, 199, 2098, 65, 195, "Input"],
+Cell[8478, 266, 374, 7, 41, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8901, 279, 89, 1, 52, "Section"],
+Cell[8993, 282, 1856, 59, 193, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
