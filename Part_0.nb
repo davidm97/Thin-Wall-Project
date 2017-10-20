@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    138716,       3744]
-NotebookOptionsPosition[    136200,       3660]
-NotebookOutlinePosition[    136612,       3676]
-CellTagsIndexPosition[    136569,       3673]
+NotebookDataLength[    143334,       3881]
+NotebookOptionsPosition[    140689,       3792]
+NotebookOutlinePosition[    141113,       3809]
+CellTagsIndexPosition[    141070,       3806]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -172,76 +172,98 @@ Cell[BoxData[{
    RowBox[{"max", " ", "lift", " ", "coefficient"}], 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"\[Rho]Al", "=", 
-   RowBox[{".1", "*", 
-    SuperscriptBox["12", "3"]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"\[Rho]Al", "=", 
+    RowBox[{".1", "*", 
+     SuperscriptBox["12", "3"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"density", " ", "of", " ", "aluminum", " ", 
     RowBox[{"(", 
-     RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"Wspar", "=", 
-   RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";", 
+     RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Wspar", "=", 
+    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";"}], 
   RowBox[{"(*", 
    RowBox[{"weight", " ", "of", " ", "spar", " ", 
-    RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
-  RowBox[{"Izz", "=", 
-   RowBox[{
-    FractionBox["1", "12"], "width", " ", "*", 
-    SuperscriptBox["height", "3"]}]}], ";", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Izz", "=", 
+    RowBox[{
+     FractionBox["1", "12"], "width", " ", "*", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
-    RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"Iyy", "=", 
-   RowBox[{
-    FractionBox["1", "12"], "Lw", "*", 
-    SuperscriptBox["height", "3"]}]}], ";", " ", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Iyy", "=", 
+    RowBox[{
+     FractionBox["1", "12"], "Lw", "*", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
-    RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"Vstall", "=", 
-   SqrtBox[
-    FractionBox["Wto", 
-     RowBox[{
-      FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";", " ", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vstall", "=", 
+    SqrtBox[
+     FractionBox["Wto", 
+      RowBox[{
+       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";"}], 
+  " ", 
   RowBox[{"(*", 
    RowBox[{"stall", " ", "velocity", " ", 
     RowBox[{"(", 
-     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"Vto", "=", 
-   RowBox[{"1.2", " ", "Vstall"}]}], ";", " ", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vto", "=", 
+    RowBox[{"1.2", " ", "Vstall"}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"takeoff", " ", "velocity", " ", 
     RowBox[{"(", 
-     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"AR", "=", 
-   RowBox[{
-    SuperscriptBox["Lw", "2"], "/", "S"}]}], ";", " ", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AR", "=", 
+    RowBox[{
+     SuperscriptBox["Lw", "2"], "/", "S"}]}], ";"}], " ", 
   RowBox[{"(*", 
-   RowBox[{"aspect", " ", "ratio"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"EE", "=", 
-   RowBox[{"10.2", "*", 
-    SuperscriptBox["10", "6"], "*", 
-    SuperscriptBox["12", "2"]}]}], ";", " ", 
+   RowBox[{"aspect", " ", "ratio"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"EE", "=", 
+    RowBox[{"10.2", "*", 
+     SuperscriptBox["10", "6"], "*", 
+     SuperscriptBox["12", "2"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
     "modulus", " ", "of", " ", "elasticity", " ", "of", " ", "Al", " ", 
      "6061"}], "-", 
     RowBox[{"T6", " ", 
-     RowBox[{"(", "psf", ")"}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"T", "=", "90000"}], ";", " ", 
+     RowBox[{"(", "psf", ")"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "=", "90000"}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"max", " ", "thrust", " ", "of", " ", "engine", " ", 
-    RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"FS", "=", "1.15"}], ";", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FS", "=", "1.15"}], ";"}], " ", 
   RowBox[{"(*", 
-   RowBox[{"factor", " ", "of", " ", "safety"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"yieldstress", "=", 
-   RowBox[{"40000", "*", 
-    FractionBox[
-     SuperscriptBox["12", "2"], "FS"]}]}], ";", " ", 
+   RowBox[{"factor", " ", "of", " ", "safety"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yieldstress", "=", 
+    RowBox[{"40000", "*", 
+     FractionBox[
+      SuperscriptBox["12", "2"], "FS"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"yield", " ", "stress", " ", "of", " ", "wing", " ", 
     RowBox[{"(", 
@@ -406,77 +428,95 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"\[Rho]Al", "=", 
     RowBox[{".1", "*", 
-     SuperscriptBox["12", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"density", " ", "of", " ", "aluminum", " ", 
-     RowBox[{"(", 
-      RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["12", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"density", " ", "of", " ", "aluminum", " ", 
+    RowBox[{"(", 
+     RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Wspar", "=", 
-    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";", 
-   RowBox[{"(*", 
-    RowBox[{"weight", " ", "of", " ", "spar", " ", 
-     RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"weight", " ", "of", " ", "spar", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Izz", "=", 
     RowBox[{
      FractionBox["1", "12"], "width", " ", "*", 
-     SuperscriptBox["height", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
-     RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Iyy", "=", 
     RowBox[{
      FractionBox["1", "12"], "Lw", "*", 
-     SuperscriptBox["height", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
-     RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Vstall", "=", 
     SqrtBox[
      FractionBox["Wto", 
       RowBox[{
-       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";", 
-   " ", 
-   RowBox[{"(*", 
-    RowBox[{"stall", " ", "velocity", " ", 
-     RowBox[{"(", 
-      RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";"}], 
+  " ", 
+  RowBox[{"(*", 
+   RowBox[{"stall", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Vto", "=", 
-    RowBox[{"1.2", " ", "Vstall"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"takeoff", " ", "velocity", " ", 
-     RowBox[{"(", 
-      RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"1.2", " ", "Vstall"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"takeoff", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"AR", "=", 
     RowBox[{
      SuperscriptBox["Lw", "2"], "/", "S"}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"aspect", " ", "ratio"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"EE", "=", 
-   RowBox[{"10.2", "*", 
-    SuperscriptBox["10", "6"], "*", 
-    SuperscriptBox["12", "2"]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"EE", "=", 
+    RowBox[{"10.2", "*", 
+     SuperscriptBox["10", "6"], "*", 
+     SuperscriptBox["12", "2"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
     "modulus", " ", "of", " ", "elasticity", " ", "of", " ", "Al", " ", 
      "6061"}], "-", 
     RowBox[{"T6", " ", 
-     RowBox[{"(", "psf", ")"}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"T", "=", "90000"}], ";", " ", 
+     RowBox[{"(", "psf", ")"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "=", "90000"}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"max", " ", "thrust", " ", "of", " ", "engine", " ", 
-    RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"FS", "=", "1.15"}], ";", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FS", "=", "1.15"}], ";"}], " ", 
   RowBox[{"(*", 
-   RowBox[{"factor", " ", "of", " ", "safety"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"yieldstress", "=", 
-   RowBox[{"40000", "*", 
-    FractionBox[
-     SuperscriptBox["12", "2"], "FS"]}]}], ";", " ", 
+   RowBox[{"factor", " ", "of", " ", "safety"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yieldstress", "=", 
+    RowBox[{"40000", "*", 
+     FractionBox[
+      SuperscriptBox["12", "2"], "FS"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"yield", " ", "stress", " ", "of", " ", "wing", " ", 
     RowBox[{"(", 
@@ -562,9 +602,9 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"py", "[", "x", "]"}], ",", 
       RowBox[{"{", 
-       RowBox[{"x", ",", "0", ",", "Lw"}], "}"}]}], "]"}], ";"}], " ", 
-   RowBox[{"(*", 
-    RowBox[{"total", " ", "lift"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"x", ",", "0", ",", "Lw"}], "}"}]}], "]"}], 
+    RowBox[{"(*", 
+     RowBox[{"total", " ", "lift"}], "*)"}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
@@ -879,7 +919,7 @@ Cell[BoxData[
      FractionBox[
       RowBox[{"(", 
        RowBox[{"95.8", "-", "20"}], ")"}], "10"]}], ";"}], 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"uvec", "=", 
      RowBox[{"{", "}"}]}], ";", 
@@ -930,7 +970,45 @@ Cell[BoxData[
    3.717435433834119*^9, 3.717435435367889*^9}, 3.717450478446395*^9, {
    3.7174505174516487`*^9, 3.7174505194294972`*^9}, {3.717450617058502*^9, 
    3.71745062118902*^9}, {3.7174506862135305`*^9, 3.7174506877492805`*^9}, {
-   3.7174542464809923`*^9, 3.717454250231346*^9}}],
+   3.7174542464809923`*^9, 3.717454250231346*^9}, {3.717505305028846*^9, 
+   3.717505453175294*^9}, {3.7175055258535748`*^9, 3.717505526341604*^9}, {
+   3.7175057360746183`*^9, 3.7175057367227917`*^9}, 3.71750591870154*^9}],
+
+Cell[BoxData["275000.`"], "Output",
+ CellChangeTimes->{
+  3.717434898269569*^9, 3.7174351372548656`*^9, 3.717435744999857*^9, 
+   3.71743579118452*^9, 3.7174359106842623`*^9, {3.7174363017963963`*^9, 
+   3.717436346067629*^9}, 3.717436387299595*^9, 3.7174364217658663`*^9, 
+   3.717436592247924*^9, {3.717437150504983*^9, 3.717437173329397*^9}, 
+   3.7174373436558323`*^9, 3.717437474749205*^9, 3.7174375530761414`*^9, 
+   3.717437607412977*^9, {3.7174378605624*^9, 3.7174378820794373`*^9}, {
+   3.717437975912208*^9, 3.717437986187868*^9}, 3.717438427677725*^9, 
+   3.717438636036502*^9, {3.71743880513032*^9, 3.7174388152176857`*^9}, {
+   3.717439050505681*^9, 3.717439058328067*^9}, {3.717439092349539*^9, 
+   3.71743912728344*^9}, {3.717439339195174*^9, 3.717439350522524*^9}, {
+   3.717439480353552*^9, 3.717439487960815*^9}, 3.717439528506399*^9, 
+   3.717439594560341*^9, 3.7174396280392427`*^9, 3.717439704438645*^9, {
+   3.717439778650489*^9, 3.717439785911152*^9}, {3.717439831792346*^9, 
+   3.717439860517178*^9}, {3.7174399568644247`*^9, 3.717439975286416*^9}, 
+   3.717440271828524*^9, {3.717440310542667*^9, 3.717440324477477*^9}, {
+   3.717440381870158*^9, 3.717440407840866*^9}, 3.717440555985702*^9, 
+   3.717440597231147*^9, 3.717440680180002*^9, 3.71744082113363*^9, 
+   3.717442032505037*^9, 3.7174479549533443`*^9, 3.717448110827657*^9, 
+   3.717448204985076*^9, {3.7174486611916895`*^9, 3.7174486997282143`*^9}, 
+   3.7174487571039934`*^9, 3.7174489036334167`*^9, {3.717448953872921*^9, 
+   3.7174489652320256`*^9}, {3.7174490179911623`*^9, 3.7174490317672462`*^9}, 
+   3.7174491264592404`*^9, 3.71744915812072*^9, {3.717449557792426*^9, 
+   3.7174496025268393`*^9}, {3.717449653444219*^9, 3.7174496768011246`*^9}, 
+   3.717449710665626*^9, {3.7174497771618843`*^9, 3.7174497928948917`*^9}, 
+   3.717449830144457*^9, 3.7174499938715343`*^9, 3.717450034289854*^9, {
+   3.717450159857896*^9, 3.717450184294881*^9}, 3.7174502958934216`*^9, 
+   3.7174504819218583`*^9, 3.71745065026103*^9, 3.7174508158086405`*^9, 
+   3.717450956372949*^9, 3.717450989935243*^9, {3.717451363627187*^9, 
+   3.7174513868657303`*^9}, 3.717451423301012*^9, 3.71745146529302*^9, 
+   3.7174515302934*^9, 3.717451699584504*^9, {3.717451736552122*^9, 
+   3.7174517424048862`*^9}, 3.71745203575117*^9, 3.717453954863182*^9, 
+   3.717454753565403*^9, 3.717454809558298*^9, 3.717505488133304*^9, 
+   3.717505532826445*^9, {3.717505835364015*^9, 3.7175058576947603`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {{}, 
@@ -943,7 +1021,7 @@ Cell[BoxData[
        91.63413840377666}, {73.06, 88.84942388054475}, {80.64, 
        85.9513551508254}, {88.22, 82.97771695011437}, {95.8, 
        79.96629401390749}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -1006,11 +1084,14 @@ Cell[BoxData[
    3.7174513868657303`*^9}, 3.717451423301012*^9, 3.71745146529302*^9, 
    3.7174515302934*^9, 3.717451699584504*^9, {3.717451736552122*^9, 
    3.7174517424048862`*^9}, 3.71745203575117*^9, 3.717453954863182*^9, 
-   3.717454753565403*^9, 3.717454809558298*^9}]
+   3.717454753565403*^9, 3.717454809558298*^9, 3.717505488133304*^9, 
+   3.717505532826445*^9, {3.717505835364015*^9, 3.71750585776256*^9}}]
 }, Open  ]],
 
 Cell["Drag", "Text",
  CellChangeTimes->{{3.717435452077652*^9, 3.71743545241293*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -1034,24 +1115,23 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
+   RowBox[{"pzR", "[", "x_", "]"}], "=", 
    RowBox[{
-    RowBox[{"pzR", "[", "x_", "]"}], "=", 
-    RowBox[{
-     RowBox[{"-", 
-      FractionBox[
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       FractionBox["1", "2"], "\[Rho]", " ", 
+       SuperscriptBox["Vto", "2"], "S", " ", "cd"}], "Lw"]}], "-", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"py", "[", "x", "]"}], "2"], 
+     FractionBox[
+      RowBox[{"(", 
        RowBox[{
         FractionBox["1", "2"], "\[Rho]", " ", 
-        SuperscriptBox["Vto", "2"], "S", " ", "cd"}], "Lw"]}], "-", 
-     FractionBox[
-      SuperscriptBox[
-       RowBox[{"py", "[", "x", "]"}], "2"], 
-      FractionBox[
-       RowBox[{"(", 
-        RowBox[{
-         FractionBox["1", "2"], "\[Rho]", " ", 
-         SuperscriptBox["Vto", "2"], "S", " ", "\[Pi]", " ", 
-         RowBox[{"Exp", " ", "[", "1", "]"}], "AR"}], ")"}], "Lw"]]}]}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+        SuperscriptBox["Vto", "2"], "S", " ", "\[Pi]", " ", 
+        RowBox[{"Exp", " ", "[", "1", "]"}], "AR"}], ")"}], "Lw"]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"VzL", "[", "x_", "]"}], "=", 
@@ -1283,7 +1363,14 @@ Cell[BoxData[{
    3.717439919492688*^9, 3.717439972898053*^9}, {3.71744025754465*^9, 
    3.717440268061823*^9}, {3.717440307273542*^9, 3.717440321262192*^9}, {
    3.717440373442225*^9, 3.7174403753134108`*^9}, {3.717440549266714*^9, 
-   3.717440550951892*^9}}],
+   3.717440550951892*^9}, {3.717506748820963*^9, 3.7175067799298286`*^9}, {
+   3.717506836277954*^9, 3.717506865154093*^9}, {3.717507190448928*^9, 
+   3.717507190942479*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "66662.16816123588`"}]], "Output",
+ CellChangeTimes->{3.717506866181604*^9}]
+}, Open  ]],
 
 Cell["Stress", "Text",
  CellChangeTimes->{{3.717435787625593*^9, 3.717435788251515*^9}}],
@@ -1364,7 +1451,7 @@ Cell[BoxData[
        4.3123976381147616`*^7}, {73.06, 4.468475348479059*^7}, {80.64, 
        4.624553058843357*^7}, {88.22, 4.780630769207655*^7}, {95.8, 
        4.9367084795719534`*^7}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -1426,9 +1513,10 @@ Cell[BoxData[
    3.7174513869660044`*^9}, 3.717451423412671*^9, 3.7174514653817644`*^9, 
    3.7174515303886585`*^9, 3.7174516996777678`*^9, {3.7174517366619215`*^9, 
    3.7174517425031524`*^9}, 3.717452035844919*^9, 3.7174539559211445`*^9, 
-   3.717454755545166*^9, 3.717454810572997*^9}]
+   3.717454755545166*^9, 3.717454810572997*^9, 3.7175054883068867`*^9, 
+   3.717505532918725*^9, 3.717505857867013*^9}]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1574,77 +1662,95 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"\[Rho]Al", "=", 
     RowBox[{".1", "*", 
-     SuperscriptBox["12", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"density", " ", "of", " ", "aluminum", " ", 
-     RowBox[{"(", 
-      RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["12", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"density", " ", "of", " ", "aluminum", " ", 
+    RowBox[{"(", 
+     RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Wspar", "=", 
-    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";", 
-   RowBox[{"(*", 
-    RowBox[{"weight", " ", "of", " ", "spar", " ", 
-     RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"weight", " ", "of", " ", "spar", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Izz", "=", 
     RowBox[{
      FractionBox["1", "12"], "width", " ", "*", 
-     SuperscriptBox["height", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
-     RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Iyy", "=", 
     RowBox[{
      FractionBox["1", "12"], "Lw", "*", 
-     SuperscriptBox["height", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
-     RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Vstall", "=", 
     SqrtBox[
      FractionBox["Wto", 
       RowBox[{
-       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";", 
-   " ", 
-   RowBox[{"(*", 
-    RowBox[{"stall", " ", "velocity", " ", 
-     RowBox[{"(", 
-      RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";"}], 
+  " ", 
+  RowBox[{"(*", 
+   RowBox[{"stall", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Vto", "=", 
-    RowBox[{"1.2", " ", "Vstall"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"takeoff", " ", "velocity", " ", 
-     RowBox[{"(", 
-      RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"1.2", " ", "Vstall"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"takeoff", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"AR", "=", 
     RowBox[{
      SuperscriptBox["Lw", "2"], "/", "S"}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"aspect", " ", "ratio"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"EE", "=", 
-   RowBox[{"10.2", "*", 
-    SuperscriptBox["10", "6"], "*", 
-    SuperscriptBox["12", "2"]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"EE", "=", 
+    RowBox[{"10.2", "*", 
+     SuperscriptBox["10", "6"], "*", 
+     SuperscriptBox["12", "2"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
     "modulus", " ", "of", " ", "elasticity", " ", "of", " ", "Al", " ", 
      "6061"}], "-", 
     RowBox[{"T6", " ", 
-     RowBox[{"(", "Pa", ")"}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"T", "=", "90000"}], ";", " ", 
+     RowBox[{"(", "Pa", ")"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "=", "90000"}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"max", " ", "thrust", " ", "of", " ", "engine", " ", 
-    RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"FS", "=", "1.15"}], ";", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FS", "=", "1.15"}], ";"}], " ", 
   RowBox[{"(*", 
-   RowBox[{"factor", " ", "of", " ", "safety"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"yieldstress", "=", 
-   RowBox[{"40000", "*", 
-    FractionBox[
-     SuperscriptBox["12", "2"], "FS"]}]}], ";", " ", 
+   RowBox[{"factor", " ", "of", " ", "safety"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yieldstress", "=", 
+    RowBox[{"40000", "*", 
+     FractionBox[
+      SuperscriptBox["12", "2"], "FS"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"yield", " ", "stress", " ", "of", " ", "wing", " ", 
     RowBox[{"(", 
@@ -2111,7 +2217,7 @@ Cell[BoxData[
        91.63413840377666}, {73.06, 88.84942388054475}, {80.64, 
        85.9513551508254}, {88.22, 82.97771695011437}, {95.8, 
        79.96629401390749}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -2174,7 +2280,8 @@ Cell[BoxData[
    3.7174514236037*^9, 3.717451465569304*^9, 3.7174515305780783`*^9, 
    3.7174516998442326`*^9, {3.7174517368332024`*^9, 3.717451742698269*^9}, 
    3.7174520360223217`*^9, 3.7174539575469584`*^9, 3.717454757076231*^9, 
-   3.7174548119907656`*^9}]
+   3.7174548119907656`*^9, 3.717505488480875*^9, 3.717505533127594*^9, 
+   3.717505858031039*^9}]
 }, Open  ]],
 
 Cell["Drag", "Text",
@@ -2533,7 +2640,7 @@ Cell[BoxData[
        3.94493107403193*^7}, {65.48, 4.101008784396227*^7}, {73.06, 
        4.257086494760525*^7}, {80.64, 4.413164205124823*^7}, {88.22, 
        4.569241915489121*^7}, {95.8, 4.725319625853419*^7}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -2595,7 +2702,8 @@ Cell[BoxData[
    3.717451387248294*^9}, 3.7174514237160873`*^9, 3.7174514656755867`*^9, 
    3.7174515306859493`*^9, 3.717451699958585*^9, {3.717451736973261*^9, 
    3.7174517427995434`*^9}, 3.7174520361246185`*^9, 3.717453958515031*^9, 
-   3.717454757835256*^9, 3.7174548126770163`*^9}]
+   3.717454757835256*^9, 3.7174548126770163`*^9, 3.717505488600375*^9, 
+   3.7175055332207403`*^9, 3.717505858121504*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2623,7 +2731,8 @@ Cell[BoxData["52.077294685990346`"], "Output",
    3.717451423752143*^9, 3.7174514657061677`*^9, 3.7174515307155848`*^9, {
    3.717451675907343*^9, 3.7174516999946895`*^9}, {3.717451737001837*^9, 
    3.717451742825636*^9}, 3.717452036148679*^9, 3.7174539586539145`*^9, 
-   3.7174547578959346`*^9, 3.7174548127492123`*^9}]
+   3.7174547578959346`*^9, 3.7174548127492123`*^9, 3.7175054886693707`*^9, 
+   3.717505533260797*^9, 3.717505858163138*^9}]
 }, Open  ]]
 }, Closed]],
 
@@ -2768,77 +2877,95 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"\[Rho]Al", "=", 
     RowBox[{".1", "*", 
-     SuperscriptBox["12", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"density", " ", "of", " ", "aluminum", " ", 
-     RowBox[{"(", 
-      RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["12", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"density", " ", "of", " ", "aluminum", " ", 
+    RowBox[{"(", 
+     RowBox[{"lb", "/", "ft3"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Wspar", "=", 
-    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";", 
-   RowBox[{"(*", 
-    RowBox[{"weight", " ", "of", " ", "spar", " ", 
-     RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+    RowBox[{"\[Rho]Al", "*", "Lw", "*", "width", "*", "height"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"weight", " ", "of", " ", "spar", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Izz", "=", 
     RowBox[{
      FractionBox["1", "12"], "width", " ", "*", 
-     SuperscriptBox["height", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
-     RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "lift", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Iyy", "=", 
     RowBox[{
      FractionBox["1", "12"], "Lw", "*", 
-     SuperscriptBox["height", "3"]}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
-     RowBox[{"(", "ft4", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+     SuperscriptBox["height", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"moment", " ", "of", " ", "inertia", " ", "of", " ", "drag", " ", 
+    RowBox[{"(", "ft4", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Vstall", "=", 
     SqrtBox[
      FractionBox["Wto", 
       RowBox[{
-       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";", 
-   " ", 
-   RowBox[{"(*", 
-    RowBox[{"stall", " ", "velocity", " ", 
-     RowBox[{"(", 
-      RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+       FractionBox["1", "2"], "\[Rho]", " ", "S", " ", "clmax"}]]]}], ";"}], 
+  " ", 
+  RowBox[{"(*", 
+   RowBox[{"stall", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"Vto", "=", 
-    RowBox[{"1.2", " ", "Vstall"}]}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"takeoff", " ", "velocity", " ", 
-     RowBox[{"(", 
-      RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"1.2", " ", "Vstall"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"takeoff", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"ft", "/", "s"}], ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"AR", "=", 
     RowBox[{
      SuperscriptBox["Lw", "2"], "/", "S"}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"aspect", " ", "ratio"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"EE", "=", 
-   RowBox[{"10.2", "*", 
-    SuperscriptBox["10", "6"], "*", 
-    SuperscriptBox["12", "2"]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"EE", "=", 
+    RowBox[{"10.2", "*", 
+     SuperscriptBox["10", "6"], "*", 
+     SuperscriptBox["12", "2"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
     "modulus", " ", "of", " ", "elasticity", " ", "of", " ", "Al", " ", 
      "6061"}], "-", 
     RowBox[{"T6", " ", 
-     RowBox[{"(", "psf", ")"}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"T", "=", "90000"}], ";", " ", 
+     RowBox[{"(", "psf", ")"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "=", "90000"}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"max", " ", "thrust", " ", "of", " ", "engine", " ", 
-    RowBox[{"(", "lbs", ")"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"FS", "=", "1.15"}], ";", " ", 
+    RowBox[{"(", "lbs", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FS", "=", "1.15"}], ";"}], " ", 
   RowBox[{"(*", 
-   RowBox[{"factor", " ", "of", " ", "safety"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"yieldstress", "=", 
-   RowBox[{"40000", "*", 
-    FractionBox[
-     SuperscriptBox["12", "2"], "FS"]}]}], ";", " ", 
+   RowBox[{"factor", " ", "of", " ", "safety"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yieldstress", "=", 
+    RowBox[{"40000", "*", 
+     FractionBox[
+      SuperscriptBox["12", "2"], "FS"]}]}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{"yield", " ", "stress", " ", "of", " ", "wing", " ", 
     RowBox[{"(", 
@@ -3012,7 +3139,8 @@ Cell[BoxData[
    3.7174513642094564`*^9, 3.7174513873826857`*^9}, 3.7174514238600073`*^9, 
    3.71745146579992*^9, 3.717451530809439*^9, 3.7174517000885005`*^9, {
    3.7174517371106296`*^9, 3.717451742905836*^9}, 3.717452036236931*^9, 
-   3.7174539592100925`*^9, 3.7174547580954437`*^9, 3.7174548130104394`*^9}],
+   3.7174539592100925`*^9, 3.7174547580954437`*^9, 3.7174548130104394`*^9, 
+   3.717505488907942*^9, 3.717505533361101*^9, 3.7175058582605963`*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -3042,7 +3170,8 @@ Cell[BoxData[
    3.7174513642094564`*^9, 3.7174513873826857`*^9}, 3.7174514238600073`*^9, 
    3.71745146579992*^9, 3.717451530809439*^9, 3.7174517000885005`*^9, {
    3.7174517371106296`*^9, 3.717451742905836*^9}, 3.717452036236931*^9, 
-   3.7174539592100925`*^9, 3.7174547580954437`*^9, 3.717454813074107*^9}]
+   3.7174539592100925`*^9, 3.7174547580954437`*^9, 3.7174548130104394`*^9, 
+   3.717505488907942*^9, 3.717505533361101*^9, 3.71750585827197*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3447,7 +3576,7 @@ Cell[BoxData[
        65.48, -32.97896884154419}, {73.06, -40.878328908921134`}, {
        80.64, -49.582131208675925`}, {88.22, -59.12445565285751}, {
        95.8, -69.55597797709197}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -3495,7 +3624,8 @@ Cell[BoxData[
    3.7174513874759808`*^9}, 3.7174514239672985`*^9, 3.717451465889693*^9, 
    3.717451530914727*^9, 3.717451700188161*^9, {3.717451737209412*^9, 
    3.717451743008133*^9}, 3.717452036323209*^9, 3.7174539598934107`*^9, 
-   3.7174547589822955`*^9, 3.7174548139353957`*^9}],
+   3.7174547589822955`*^9, 3.7174548139353957`*^9, 3.717505489009425*^9, 
+   3.7175055334549637`*^9, 3.717505858356906*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {{}, 
@@ -3508,7 +3638,7 @@ Cell[BoxData[
        65.48, -57.88813358722281}, {73.06, -60.672848110454694`}, {
        80.64, -63.57091684017407}, {88.22, -66.5445550408851}, {
        95.8, -69.55597797709197}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -3556,7 +3686,8 @@ Cell[BoxData[
    3.7174513874759808`*^9}, 3.7174514239672985`*^9, 3.717451465889693*^9, 
    3.717451530914727*^9, 3.717451700188161*^9, {3.717451737209412*^9, 
    3.717451743008133*^9}, 3.717452036323209*^9, 3.7174539598934107`*^9, 
-   3.7174547589822955`*^9, 3.7174548143169117`*^9}]
+   3.7174547589822955`*^9, 3.7174548139353957`*^9, 3.717505489009425*^9, 
+   3.7175055334549637`*^9, 3.717505858399268*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3616,7 +3747,7 @@ Cell[BoxData[
        4.196011469043116*^6}, {73.06, 4.451947134268634*^6}, {80.64, 
        4.707882799494152*^6}, {88.22, 4.96381846471967*^6}, {95.8, 
        5.219754129945187*^6}}],
-      FontFamily->"Arial"]}, {}}, {}, {}, {{}, {}}},
+      FontFamily->"Arial"]}, {}}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -3652,15 +3783,17 @@ Cell[BoxData[
    3.7174513875632706`*^9}, 3.717451424100897*^9, 3.7174514659599147`*^9, 
    3.717451530996404*^9, 3.717451700256358*^9, {3.7174517373478003`*^9, 
    3.7174517430833325`*^9}, 3.7174520364333982`*^9, 3.7174539611067424`*^9, 
-   3.717454759764876*^9, 3.717454814861867*^9}]
+   3.717454759764876*^9, 3.717454814861867*^9, 3.71750548930355*^9, 
+   3.7175055336654*^9, 3.717505858600225*^9}]
 }, Open  ]]
 }, Closed]]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{638, 668},
-WindowMargins->{{-7, Automatic}, {Automatic, 0}},
-FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
 StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -3676,72 +3809,76 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 151, 2, 99, "Title"],
+Cell[580, 22, 151, 2, 90, "Title"],
 Cell[CellGroupData[{
-Cell[756, 28, 308, 6, 147, "Subchapter"],
-Cell[1067, 36, 318, 5, 39, "Input"],
+Cell[756, 28, 308, 6, 129, "Subchapter"],
+Cell[1067, 36, 318, 5, 37, "Input"],
 Cell[CellGroupData[{
-Cell[1410, 45, 98, 1, 72, "Section"],
-Cell[1511, 48, 7109, 208, 766, "Input"],
-Cell[8623, 258, 134, 3, 30, "Text"]
+Cell[1410, 45, 98, 1, 66, "Section"],
+Cell[1511, 48, 7409, 230, 766, "Input"],
+Cell[8923, 280, 134, 3, 30, "Text"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[8794, 266, 203, 3, 58, "Section"],
-Cell[9000, 271, 213, 3, 39, "Input"],
-Cell[9216, 276, 91, 1, 30, "Text"],
-Cell[9310, 279, 7018, 207, 766, "Input"],
-Cell[16331, 488, 86, 1, 30, "Text"],
+Cell[9094, 288, 203, 3, 52, "Section"],
+Cell[9300, 293, 213, 3, 37, "Input"],
+Cell[9516, 298, 91, 1, 30, "Text"],
+Cell[9610, 301, 7239, 225, 707, "Input"],
+Cell[16852, 528, 86, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[16442, 493, 15777, 439, 1685, "Input"],
-Cell[32222, 934, 4119, 74, 70, "Output"]
+Cell[16963, 533, 15970, 441, 1516, "Input"],
+Cell[32936, 976, 2460, 34, 37, "Output"],
+Cell[35399, 1012, 4198, 75, 255, "Output"]
 }, Open  ]],
-Cell[36356, 1011, 85, 1, 30, "Text"],
-Cell[36444, 1014, 8823, 271, 1136, "Input"],
-Cell[45270, 1287, 88, 1, 30, "Text"],
+Cell[39612, 1090, 85, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[45383, 1292, 2340, 61, 363, "Input"],
-Cell[47726, 1355, 4118, 73, 70, "Output"]
+Cell[39722, 1095, 8917, 272, 972, "Input"],
+Cell[48642, 1369, 104, 2, 37, "Output"]
+}, Open  ]],
+Cell[48761, 1374, 88, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[48874, 1379, 2340, 61, 313, "Input"],
+Cell[51217, 1442, 4176, 74, 242, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55442, 1522, 258, 3, 66, "Section"],
+Cell[55703, 1527, 193, 3, 37, "Input"],
+Cell[55899, 1532, 91, 1, 30, "Text"],
+Cell[55993, 1535, 7411, 227, 707, "Input"],
+Cell[63407, 1764, 86, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[63518, 1769, 15602, 437, 1499, "Input"],
+Cell[79123, 2208, 4167, 75, 70, "Output"]
+}, Open  ]],
+Cell[83305, 2286, 85, 1, 30, "Text"],
+Cell[83393, 2289, 8947, 272, 989, "Input"],
+Cell[92343, 2563, 88, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[92456, 2568, 2340, 61, 313, "Input"],
+Cell[94799, 2631, 4171, 74, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99007, 2710, 634, 16, 55, "Input"],
+Cell[99644, 2728, 460, 6, 70, "Output"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[51893, 1434, 258, 3, 58, "Section"],
-Cell[52154, 1439, 193, 3, 39, "Input"],
-Cell[52350, 1444, 91, 1, 30, "Text"],
-Cell[52444, 1447, 7190, 209, 766, "Input"],
-Cell[59637, 1658, 86, 1, 30, "Text"],
+Cell[100153, 2740, 100, 1, 52, "Section"],
+Cell[100256, 2743, 244, 4, 39, "Input"],
+Cell[100503, 2749, 7265, 226, 766, "Input"],
 Cell[CellGroupData[{
-Cell[59748, 1663, 15602, 437, 1685, "Input"],
-Cell[75353, 2102, 4111, 74, 70, "Output"]
-}, Open  ]],
-Cell[79479, 2179, 85, 1, 30, "Text"],
-Cell[79567, 2182, 8947, 272, 1136, "Input"],
-Cell[88517, 2456, 88, 1, 30, "Text"],
-Cell[CellGroupData[{
-Cell[88630, 2461, 2340, 61, 363, "Input"],
-Cell[90973, 2524, 4113, 73, 70, "Output"]
+Cell[107793, 2979, 5521, 134, 287, "Input"],
+Cell[113317, 3115, 2000, 27, 70, "Output"],
+Cell[115320, 3144, 2063, 29, 70, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[95123, 2602, 634, 16, 59, "Input"],
-Cell[95760, 2620, 388, 5, 70, "Output"]
-}, Open  ]]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[96197, 2631, 100, 1, 58, "Section"],
-Cell[96300, 2634, 244, 4, 39, "Input"],
-Cell[96547, 2640, 7044, 208, 766, "Input"],
-Cell[CellGroupData[{
-Cell[103616, 2852, 5521, 134, 287, "Input"],
-Cell[109140, 2988, 1928, 26, 39, "Output"],
-Cell[111071, 3016, 1992, 28, 39, "Output"]
+Cell[117420, 3178, 13386, 387, 1628, "Input"],
+Cell[130809, 3567, 3087, 60, 70, "Output"],
+Cell[133899, 3629, 3120, 60, 70, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[113100, 3049, 13386, 387, 1628, "Input"],
-Cell[126489, 3438, 3029, 59, 237, "Output"],
-Cell[129521, 3499, 3062, 59, 239, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[132620, 3563, 1336, 42, 279, "Input"],
-Cell[133959, 3607, 2189, 47, 235, "Output"]
+Cell[137056, 3694, 1336, 42, 279, "Input"],
+Cell[138395, 3738, 2242, 48, 70, "Output"]
 }, Open  ]]
 }, Closed]]
 }, Open  ]]
